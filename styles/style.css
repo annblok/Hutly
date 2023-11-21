@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap');
 
 body {
     font-family: 'Fira Sans', sans-serif;
@@ -7,6 +7,7 @@ body {
 :root {
     --dark: #050F27;
     --light: #F7F8F8;
+    --rgb-white: 255,255,255;
 }
 
 .container {
@@ -130,6 +131,7 @@ body {
 .text {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 144px), 1fr));
+    align-items: center;
     gap: 76px;
     list-style-type: none;
     background-color: var(--light);
@@ -143,6 +145,48 @@ body {
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 120%;
+}
+
+.dark {
+    background-color: var(--dark);
+    padding: clamp(23px, 6vw, 125px) clamp(18px, 6vw, 86px) clamp(23px, 6vw, 125px);
+    border-radius: 80px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr clamp(80px, 20vw, 320px);
+    gap: min(10vw, 200px);
+}
+
+.contact__title {
+    font-size: clamp(1.75rem, 8vw, 10.938rem);
+    color: #fff;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+}
+
+.contact__text {
+    font-size: clamp(0.688rem, 4vw - 0.5rem, 2.688rem);
+    line-height: 1.2;
+    color: #fff;
+    font-weight: 300;
+    max-width: clamp(165px, 40vw, 645px);
+}
+
+.contact__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(80px, 20vw, 344px);
+    font-size: clamp(0.75rem, 1vw + 0.5rem, 1.875rem);
+    font-weight: 700;
+    background-color: rgba(var(--rgb-white), 0.05);
+    color: #fff;
+    border: none;
+    border-radius: 77px;
 }
 
 @media (max-width: 920px) {
@@ -193,5 +237,19 @@ body {
         margin-top: 20px;
         gap: 14px;
         padding: 26px 18px;
+    }
+    .dark {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+    .contact {
+        background-color: var(--dark);
+        padding: 23px 18px;
+        border-radius: 15px;
+    }
+
+    .contact__btn {
+        border-radius: 16px;
     }
 }
