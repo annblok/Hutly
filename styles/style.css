@@ -7,7 +7,7 @@ body {
 :root {
     --dark: #050F27;
     --light: #F7F8F8;
-    --rgb-white: 255,255,255;
+    --rgb-white: 255, 255, 255;
 }
 
 .container {
@@ -151,6 +151,11 @@ body {
     background-color: var(--dark);
     padding: clamp(23px, 6vw, 125px) clamp(18px, 6vw, 86px) clamp(23px, 6vw, 125px);
     border-radius: 80px;
+    margin-top: 80px;
+    margin-bottom: 53px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 9vw, 220px);
 }
 
 .contact {
@@ -160,7 +165,7 @@ body {
 }
 
 .contact__title {
-    font-size: clamp(1.75rem, 8vw, 10.938rem);
+    font-size: clamp(1.75rem, 13vw - 3rem, 10.938rem);
     color: #fff;
     font-weight: 500;
     line-height: 1;
@@ -186,7 +191,38 @@ body {
     background-color: rgba(var(--rgb-white), 0.05);
     color: #fff;
     border: none;
-    border-radius: 77px;
+    border-radius: clamp(16px, 4vw, 77px);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(var(--rgb-white), 0.03);
+    padding: clamp(22px, 4vw, 47px) clamp(18px, 4vw, 91px);
+    border-radius: 80px;
+}
+
+.footer__logo {
+    display: block;
+    width: clamp(44px, 9vw, 96px);
+    height: clamp(18px, 4vw, 40px);
+    background-image: url(../images/logo-light.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+
+.footer__nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2vw, 50px);
+}
+
+.footer__link {
+    font-size: clamp(0.75rem, 2vw - 0.25rem, 1.25rem);
+    color: #fff;
+    text-decoration: none;
 }
 
 @media (max-width: 920px) {
@@ -238,18 +274,27 @@ body {
         gap: 14px;
         padding: 26px 18px;
     }
+
     .dark {
         background-color: transparent;
         padding: 0;
         border-radius: 0;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        gap: 20px;
     }
+
     .contact {
         background-color: var(--dark);
         padding: 23px 18px;
         border-radius: 15px;
     }
 
-    .contact__btn {
-        border-radius: 16px;
+    .contact__title {
+        font-size: clamp(1.75rem, 16vw - 3rem, 6.25rem);
+    }
+
+    .footer {
+        background-color: var(--dark);
     }
 }
